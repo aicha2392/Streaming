@@ -4,21 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/search.css">
   
   <title>Frontend Mentor | Entertainment web app</title>
 </head>
 <body>
-
-  Search for movies or TV series
   
-  Trending
+  <!--Search for movies or TV series-->
+    <form class="search-box">
+      
+      <input class="search-box" type="search" id="search-id" placeholder="Search for movies..." value="">
+    </form>
+  
+  <!--display results-->
+    <p id="result"></p>
+
+  <!--Show card-->
+
+  
+  <div class="movie-cards">
+    <!-- <div class="item justify-self-center">
+        <img src="./assets/img3.png" class="bg-cover img" alt="img1">
+        <div class="text-center py-3 font-poppins">
+            <h1 class="text-lg title">Product Title</h1>
+            <a href="#" class="block"><span class="text-sm text-red-400">Category</span></a>
+            <span class="block py-3">$<span class="text-md">12.99</span></span>
+            <button class="border-2 px-8 py-1 bg-yellow-400 border rounded-md">Buy Now</button>
+        </div>
+    </div> -->
+</div>
 
   <!-- Display trending shows -->
 
-  Recommended for you
+  
 
   <!-- Display recommended shows -->
-  
+
+
+
+  <!--JS script-->
+  <script src="assets/js/search.js"></script>
 </body>
 </html>
