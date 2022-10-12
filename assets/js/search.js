@@ -1,16 +1,20 @@
 let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
 
-fetch('./data.json')
-    .then(res => res.json())
-    .then(json =>{
 
-        // iterating products
-        for (let value of json){
-            addElement(searchResult, value);
-        }
-        
-    });
+
+    fetch('./data.json')
+        .then(res => res.json()
+        .then(json =>{
+
+            // iterating movies
+            for (let value of json){
+                addElement(searchResult, value);
+            }
+            
+        })
+    )
+    
 
 // add event listener
 searchInput.addEventListener('keyup', searchmovies);
@@ -30,18 +34,19 @@ function searchmovies(){
         if(span.innerHTML.toUpperCase().indexOf(searchValue) > -1){
             item[i].style.display = "initial";
             b++;
+            
         }else{
             item[i].style.display = "none";
         }
-        
       }
 
       document.getElementById("result").innerHTML="Found "+b+" results for '"+searchInput.value+"'";
-}
+    
+    }
 
 
 
-// get value from the api create dynamic element
+// get value from the data json and create dynamic element
 function addElement(appendIn, value){
     let div = document.createElement('div');
     div.className = "card";
@@ -57,7 +62,10 @@ function addElement(appendIn, value){
     appendIn.appendChild(div);
 }
 
+//reset search input lors de l'actualisation de la page
 
-
+window.onload = function(){
+    document.getElementById("search-id").value = "";
+   }
 
 

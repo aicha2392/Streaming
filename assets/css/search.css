@@ -58,7 +58,7 @@ input.search-box {
     width: 100%;
     padding: 9px 4px 9px 40px;
     color: var(--white);
-    background: var(--dark-blue) url(../icon-search.svg) no-repeat;
+    background: var(--black) url(../icon-search.svg) no-repeat;
     background-size: 24px 24px;
     background-position:left;
     height: 20px;
