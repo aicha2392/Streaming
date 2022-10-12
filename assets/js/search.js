@@ -1,6 +1,4 @@
-let searchResult = document.querySelector(".container");
-let contactsListElement = document.getElementById("persons-list");
-
+let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
 
 fetch('./data.json')
