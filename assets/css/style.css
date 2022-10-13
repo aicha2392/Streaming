@@ -1,0 +1,41 @@
+/* CSS reset */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Outfit', sans-serif;
+  }
+ /* Flex settings */
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-between { justify-content: space-between; }
+.flex-justify-around { justify-content: space-around; }
+.flex-justify-evenly { justify-content: space-evenly; }
+.flex-align-center { align-items: center; }
+.flex-align-start { align-items: flex-start; }
+.flex-align-end { align-items: flex-end; }
+.flex-align-stretch { align-items: stretch; }
+.flex-align-baseline { align-items: baseline; }
+
+ /* Colors */
+:root {
+    --red: hsl(0, 97%, 63%);
+    --black: hsl(223, 30%, 9%);
+    --light-blue: hsl(223, 23%, 46%);
+    --dark-blue: hsl(223, 36%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+/* Font*/
+--font-heading: 1.6rem;
+--font-weight: 400;
+--font-primary: "Outfit", sans-serif;
+
+--size-24: 2.4rem;
+}
+
+
+
+
