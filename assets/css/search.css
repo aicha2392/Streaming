@@ -92,15 +92,18 @@ outline: 0px;
 }
 
 .movie-cards{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     grid-column-gap: 5rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem;* */
     position: absolute;
     left: 16px;
     top: 177px;
-    width: calc(100% - 60px);    
+    /* width: calc(100% - 60px);  */
+    gap: 18px;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
   /*
@@ -110,33 +113,60 @@ outline: 0px;
 */
 
   
-.card {
-    background-color: white;
-    padding: .5rem;
-}
-  
-  .card > .header {
-    margin-bottom: .25rem;
-  }
-  
-  .card > .body {
-    font-size: .8rem;
-    color: #777;
-  }
-  
-  .hide {
-    display: none;
-  }
+
+.card{
+  position: relative;
+  width: 160px;
+  height: 170px; 
    
-a .category{
-    color: red;
-    font-size: 12;
 }
 
-.resultImg{
-    width: 164px;
-    height: 110px;
-    left: 16px;
-    top: 517px;
-    border-radius: 8px;
+.card-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 5px;
+  background: #8f8a8a65;
+  border-radius: 100%;
 }
+
+.card-icon img{
+  height: 10px;
+  width: 10px;
+  margin:0 5px 0 5px;
+}
+
+.card .cover {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card .details {
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+}
+
+.card p{
+  color:var(--white);
+  font-weight: 100;
+  font-size:12px;
+  margin: 3px;
+}
+
+#titre-film{
+  color:var(--white);
+  font-weight: 300;
+  font-size:14px;
+}
+
+.card .Movie::before {
+  content: url("/assets/icon-category-movie.svg");
+  margin-right: 5px;
+}
+
+.card .Series::before {
+  content: url("/assets/icon-category-tv.svg");
+  margin-right: 5px;
+}
+

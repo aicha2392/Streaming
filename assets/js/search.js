@@ -9,6 +9,7 @@ let searchInput = document.getElementById("search-id");
 
             // iterating movies
             for (let value of json){
+                
                 addElement(searchResult, value);
             }
             
@@ -27,38 +28,67 @@ function searchmovies(){
     let searchValue = searchInput.value.toUpperCase();
     let item = searchResult.querySelectorAll('.card');
     let b =0;
-    console.log(item.length);
+
     for (let i = 0; i < item.length; i++){
-        let span = item[i].querySelector('.title');
+        let span = item[i].querySelector('#titre-film');
         
         if(span.innerHTML.toUpperCase().indexOf(searchValue) > -1){
-            item[i].style.display = "initial";
+            item[i].style.display = "block";
             b++;
             
         }else{
             item[i].style.display = "none";
         }
       }
-
+      
       document.getElementById("result").innerHTML="Found "+b+" results for '"+searchInput.value+"'";
-    
+      
+      document.getElementById("search-id").onclick = function() {
+        location.reload();
+        document.getElementById('search-id').value = "";
+        result.style.display = "none";
+        
+      }
     }
 
-
+    
+    
+    
+    
 
 // get value from the data json and create dynamic element
 function addElement(appendIn, value){
+
+    let imgBookmarked = "";
+        if(value.isBookmarked == true){
+            imgBookmarked = "../assets/icon-bookmark-full.svg";
+        }else{
+                imgBookmarked = "../assets/icon-bookmark-empty.svg";
+        }
+        
     let div = document.createElement('div');
     div.className = "card";
 
-    let { thumbnail,title, category } = value;
+    let {thumbnail, year, title, category, rating } = value;
 
     div.innerHTML = `
-                <img class="resultImg" src=${thumbnail.regular.small}></img>
-                <h1 class="title">${title}</h1>
-                <a href="#" class="category">${category}</a>
-            
+                <div class="card-icon">
+                     <img src="${imgBookmarked}" alt="">
+                     </div>
+
+                     <img class="cover" src="${thumbnail.regular.small}" alt="">
+                     <div class="infos">
+                     <div class="detail flex">
+                         <p class="years">${year}</p>
+                         <p>•</p>
+                         <p class="${category}">${category}</p>
+                         <p>•</p>
+                         <p class="pegi">${rating}</p>
+                     </div>
+                     <h4 id="titre-film">${title}</h4> 
+                     </div>
     `;
+    
     appendIn.appendChild(div);
 }
 
@@ -67,5 +97,4 @@ function addElement(appendIn, value){
 window.onload = function(){
     document.getElementById("search-id").value = "";
    }
-
 
