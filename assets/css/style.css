@@ -42,7 +42,7 @@
 #scroll{ 
 
     position: absolute;
-    width: 496px;
+    width: 375px;
     height: 140px;
     left: 0px;
     top: 41px;  
@@ -84,7 +84,7 @@ color: #FFFFFF;
   .slideshow-container {
     margin-top: 4vw;
     overflow: scroll;
-    min-height: 60vmin;
+    min-height: 140px;
     cursor: grab;
     position: relative;
   }
@@ -99,7 +99,6 @@ color: #FFFFFF;
   }
   .slide {
     flex-shrink: 0;
-    height: 80px;
     width: 240px;
     color: #fff;
     background-size: cover;
@@ -138,7 +137,14 @@ color: #FFFFFF;
     pointer-events: auto;
   }
   
-  
+  .card-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 5px;
+    background: #8f8a8a65;
+    border-radius: 100%;
+  }
   .s1 {
     background-image: url("https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80");
   }

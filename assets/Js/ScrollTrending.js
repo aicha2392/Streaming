@@ -1,4 +1,4 @@
-const slider = document.querySelector('.slideshow-container')
+/*const slider = document.querySelector('.slideshow-container')
 let holding = false;
 let firstClickX;
 let alreadyLeftScrolled;
@@ -83,4 +83,28 @@ slider.addEventListener('touchmove', e => {
   slider.scrollLeft = alreadyLeftScrolled - scrolled;
 
   velocity = slider.scrollLeft - prevScrollLeft;
-})
+})*/
+
+
+fetch('./data.json')
+    .then(response=>response.json())
+    .then(data=>{
+      let scroll = document.getElementById('slideshow');
+      let cardHtml = "";
+        for(let card of data){
+          console.log(card);
+          if(card.isTrending == true){
+            cardHtml += '<div class="slide" style="background-image:url('+card.thumbnail.trending.small+')">';
+            if (card.isBookmarked){
+              cardHtml += '<div style="color: red;">T</div>';
+            }else{
+              cardHtml += '<div style="color: white;">T</div>';
+            }
+            cardHtml += card.year +'<br>'+card.category +'<br>'+card.rating+'<br>'+card.title;
+            cardHtml += '<div class="overlay"></div>';
+            cardHtml += '</div>';
+           // 
+            scroll.innerHTML = cardHtml;
+          }
+        }
+    })
