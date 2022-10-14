@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/css/search.css">
+  <link rel="stylesheet" href="./assets/css/AllCards.css">
   
   <title>Frontend Mentor | Entertainment web app</title>
 </head>
@@ -14,26 +15,32 @@
   <!--Search for movies or TV series-->
     <form class="search-box">
       
-      <input class="search-box" type="search" id="search-id" placeholder="Search for movies..." onclick="this.value=''"  autocomplete="off">
+      <input class="search-box" type="search" id="search-id" placeholder="Search for movies or TV series" onclick="this.value=''"  autocomplete="off">
     </form>
   
-  <!--display results-->
+  <!--display nbr of results-->
     <p id="result"></p>
 
-  <!--Show card-->
+  <!--Show search results-->
     <div class="movie-cards flex">
       
     </div>
 
   <!-- Display trending shows -->
-
+  
   
 
   <!-- Display recommended shows -->
+  <main id="recommended">
+    <h2>Recommended for you</h2>
+  <div id="all-cards" class="all-cards flex">
 
+  </main> 
+    
 
 
   <!--JS script-->
+  <script src="./assets/js/AllCards.js"></script>
   <script src="./assets/js/search.js"></script>
 </body>
 </html>

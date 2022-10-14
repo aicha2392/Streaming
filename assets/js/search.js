@@ -1,5 +1,7 @@
 let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
+let content = document.getElementById('recommended');
+searchResult.style.visibility='hidden';
 
 
 
@@ -26,36 +28,38 @@ searchInput.addEventListener('keyup', searchmovies);
 // callback function 
 function searchmovies(){
     let searchValue = searchInput.value.toUpperCase();
-    let item = searchResult.querySelectorAll('.card');
-    let b =0;
-
-    for (let i = 0; i < item.length; i++){
-        let span = item[i].querySelector('#titre-film');
+    
+    if(searchValue != ""){
         
-        if(span.innerHTML.toUpperCase().indexOf(searchValue) > -1){
-            item[i].style.display = "block";
-            b++;
+        let item = searchResult.querySelectorAll('.card');
+        let b =0;
+        content.style.visibility='hidden';
+        searchResult.style.visibility='visible';
+        for (let i = 0; i < item.length; i++){
+            let span = item[i].querySelector('#titre-film');
             
-        }else{
-            item[i].style.display = "none";
+            if(span.innerHTML.toUpperCase().indexOf(searchValue) > -1){
+                item[i].style.display = "block";
+                b++;
+                
+            }else{
+                item[i].style.display = "none";
+            }
         }
-      }
-      
-      document.getElementById("result").innerHTML="Found "+b+" results for '"+searchInput.value+"'";
-      
-      document.getElementById("search-id").onclick = function() {
+        
+        document.getElementById("result").innerHTML="Found "+b+" results for '"+searchInput.value+"'";
+    }else{
         location.reload();
         document.getElementById('search-id').value = "";
-        result.style.display = "none";
-        
-      }
+        result.style.visibility = "hidden";
+        }
+    document.getElementById("search-id").onclick = function() {
+        location.reload();
+        document.getElementById('search-id').value = "";
+        result.style.visibility = "hidden";
     }
-
-    
-    
-    
-    
-
+    }
+ 
 // get value from the data json and create dynamic element
 function addElement(appendIn, value){
 
@@ -81,7 +85,7 @@ function addElement(appendIn, value){
                      <div class="detail flex">
                          <p class="years">${year}</p>
                          <p>•</p>
-                         <p class="${category}">${category}</p>
+                         <p class="category">${category}</p>
                          <p>•</p>
                          <p class="pegi">${rating}</p>
                      </div>
