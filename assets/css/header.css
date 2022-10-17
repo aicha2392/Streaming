@@ -83,7 +83,7 @@ nav svg:hover {
 }
 
 /*=============== TAB ===============*/
-@media only screen and (min-width: 351px) {
+@media (min-width:376px) and (max-width: 768px){
     nav {
         flex-direction: row;
         height: 72px;
