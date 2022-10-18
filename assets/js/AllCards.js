@@ -13,7 +13,7 @@ fetch('data.json')
             }
             allCards.innerHTML += `
             <div class="card">
-                <div class="card-icon">
+                <div class="card-icon" onclick = "getfavorie()" >
                   <img src="${imgBookmarked}" alt="">
                 </div>
         
@@ -32,3 +32,18 @@ fetch('data.json')
             `
           }
     })
+
+
+    // On va stocker nos favories dans le localStorage
+    // localStorage.setItem("clé",valeur)
+    // localStorage.getItem("clé")
+
+
+
+
+
+
+
+
+    
+
