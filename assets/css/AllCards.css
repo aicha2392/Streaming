@@ -1,25 +1,58 @@
 /* CSS reset */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     font-family: 'Outfit', sans-serif;
-  }
+}
 
 /* Flex settings */
-.flex { display: flex; }
-.flex-column { flex-direction: column; }
-.flex-justify-center { justify-content: center; }
-.flex-justify-between { justify-content: space-between; }
-.flex-justify-around { justify-content: space-around; }
-.flex-justify-evenly { justify-content: space-evenly; }
-.flex-align-center { align-items: center; }
-.flex-align-start { align-items: flex-start; }
-.flex-align-end { align-items: flex-end; }
-.flex-align-stretch { align-items: stretch; }
-.flex-align-baseline { align-items: baseline; }
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-justify-between {
+    justify-content: space-between;
+}
+
+.flex-justify-around {
+    justify-content: space-around;
+}
+
+.flex-justify-evenly {
+    justify-content: space-evenly;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-align-start {
+    align-items: flex-start;
+}
+
+.flex-align-end {
+    align-items: flex-end;
+}
+
+.flex-align-stretch {
+    align-items: stretch;
+}
+
+.flex-align-baseline {
+    align-items: baseline;
+}
 
 /* Colors */
 :root {
@@ -30,29 +63,29 @@
     --white: hsl(0, 0%, 100%);
 }
 
-body{
+body {
     background-color: var(--dark-blue);
 }
 
-h2{
+h2 {
     color: var(--white);
-    font-weight:200;
-    font-size:18px;
-    padding:0 0px 0 10px;
-    margin-bottom: 30px;   
+    font-weight: 200;
+    font-size: 18px;
+    padding: 0 0px 0 10px;
+    margin-bottom: 30px;
 }
 
 
-.all-cards{
-  gap: 20px;
-  padding: 10px;
-  flex-wrap: wrap;
+.all-cards {
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
-.card{
+.card {
     position: relative;
     width: 160px;
-    height: 170px;  
+    height: 170px;
 }
 
 .card-icon {
@@ -62,13 +95,13 @@ h2{
     padding: 5px;
     background: #8f8a8a65;
     border-radius: 100%;
-  }
+}
 
-.card-icon img{
+.card-icon img {
     height: 10px;
     width: 10px;
-    margin:0 5px 0 5px;
-  }
+    margin: 0 5px 0 5px;
+}
 
 .card .cover {
     width: 100%;
@@ -81,17 +114,17 @@ h2{
     gap: 10px;
 }
 
-.card p{
-    color:var(--white);
+.card p {
+    color: var(--white);
     font-weight: 100;
-    font-size:12px;
+    font-size: 12px;
     margin: 3px;
 }
 
-#titre-film{
-    color:var(--white);
+#titre-film {
+    color: var(--white);
     font-weight: 300;
-    font-size:14px;
+    font-size: 14px;
 }
 
 .card .Movie::before {
@@ -110,62 +143,62 @@ h2{
 
 /**************************************** PARTIE TABLETTE ********************************************************/
 
-@media (min-width:376px) and (max-width: 768px){ 
-    .card{
+@media (min-width:376px) and (max-width: 768px) {
+    .card {
         position: relative;
         width: 230px;
-        height: 170px; 
-        margin-bottom: 30px; 
+        height: 170px;
+        margin-bottom: 30px;
         padding-left: 10px;
     }
 
-    .all-cards{
+    .all-cards {
         gap: 20px;
         flex-wrap: wrap;
-        padding:10px;
-      }
-
-    h2{
-        color: var(--white);
-        font-weight:200;
-        font-size:25px;
-        padding:0 0 0 10px;
-        margin-bottom: 30px;  
+        padding: 10px;
     }
- }
+
+    h2 {
+        color: var(--white);
+        font-weight: 200;
+        font-size: 25px;
+        padding: 0 0 0 10px;
+        margin-bottom: 30px;
+    }
+}
 
 /* *************************************** PARTIE DESKTOP ********************************************************/
- 
-@media (min-width:769px) and (max-width:1440px){
-    .card{
+
+@media (min-width:769px) and (max-width:1440px) {
+    .card {
         position: relative;
         width: 270px;
-        height: 170px; 
-        margin-bottom: 40px; 
+        height: 170px;
+        margin-bottom: 40px;
         padding-left: 10px;
     }
 
-    .all-cards{
+    .all-cards {
         gap: 20px;
         flex-wrap: wrap;
         display: flex;
         justify-content: flex-end;
         margin: 40px;
-      }
-    
-    h2{
-        color: var(--white);
-        font-weight:200;
-        font-size:30px;
-        padding:0 0px 0 10px;
-        margin-bottom: 30px; 
-        margin-left: 240px; 
     }
 
-    #titre-film{
-        color:var(--white);
+    h2 {
+        color: var(--white);
+        font-weight: 200;
+        font-size: 30px;
+        padding: 0 0px 0 10px;
+        margin-bottom: 30px;
+        margin-left: 240px;
+    }
+
+    #titre-film {
+        color: var(--white);
         font-weight: 300;
         font-size: 20px;
     }
 
-    }
+}

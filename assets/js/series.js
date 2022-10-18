@@ -1,17 +1,18 @@
-fetch("data.json")
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i of data) {
-      if (i.category == "TV Series") {
-        // console.log(serie.title)
-        let allCards = document.querySelector("#all-cards");
-        let imgBookmarked = "";
-        if (i.isBookmarked == true) {
-          imgBookmarked = "/assets/icon-bookmark-full.svg";
-        } else {
-          imgBookmarked = "/assets/icon-bookmark-empty.svg";
-        }
-        allCards.innerHTML += `
+fetch('data.json')
+    .then(response=>response.json())
+    .then(data=>{
+
+        for(let i of data){
+            if(i.category == 'TV Series'){
+                // console.log(serie.title)
+                let allCards = document.querySelector("#all-cards");
+                let imgBookmarked = "";
+                if(i.isBookmarked == true){
+                imgBookmarked = "/assets/icon-bookmark-full.svg";
+                }else{
+                imgBookmarked = "/assets/icon-bookmark-empty.svg";
+                }
+                allCards.innerHTML += `
                 <div class="card">
                     <div class="card-icon" onclick = "getfavorie()" >
                     <img src="${imgBookmarked}" alt="">
@@ -29,7 +30,6 @@ fetch("data.json")
                     <h4 id="titre-film">${i.title}</h4> 
                 </div>
                 </div> 
-            `;
-      }
-    }
-  });
+            `}
+          }
+    })

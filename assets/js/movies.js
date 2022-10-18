@@ -6,11 +6,13 @@ fetch("data.json")
         // console.log(serie.title)
         let allCards = document.querySelector("#all-cards");
         let imgBookmarked = "";
+
         if (i.isBookmarked == true) {
           imgBookmarked = "/assets/icon-bookmark-full.svg";
         } else {
           imgBookmarked = "/assets/icon-bookmark-empty.svg";
         }
+
         allCards.innerHTML += `
                 <div class="card">
                     <div class="card-icon" onclick = "getfavorie()" >
