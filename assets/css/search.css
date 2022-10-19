@@ -25,7 +25,7 @@ form.search-box.flex {
 input.search-box {
   border: none;
   width: 80%;
-  margin: 4px 40px 20px 40px;
+  margin: 8px 11px 20px 20px;
   border-bottom: 2px solid transparent;
   color: var(--white);
   background: transparent url(../icon-search.svg) no-repeat;
