@@ -1,91 +1,3 @@
-/*const slider = document.querySelector('.slideshow-container')
-let holding = false;
-let firstClickX;
-let alreadyLeftScrolled;
-let velocity;
-let rafID;
-
-slider.addEventListener('mousedown', e => {
-  holding = true;
-
-  firstClickX = e.pageX - slider.offsetLeft;
-
-  alreadyLeftScrolled = slider.scrollLeft;
-  
-  stopTransition()
-})
-
-slider.addEventListener('mousemove', e => {
-  if(!holding) return;
-
-  const x = e.pageX - slider.offsetLeft;
-
-  const scrolled = (x - firstClickX) * 2;
-
-  const prevScrollLeft = slider.scrollLeft
-
-  slider.scrollLeft = alreadyLeftScrolled - scrolled;
-
-  velocity = slider.scrollLeft - prevScrollLeft;
- 
-})
-
-slider.addEventListener('mouseup', () => {
-  holding = false;
-  startTransition()
-})
-slider.addEventListener('mouseleave', () => {
-  holding = false;
-})
-
-function startTransition(){
-
-  stopTransition();
-
-  rafID = requestAnimationFrame(decreasingTransition);
-}
-
-function stopTransition(){
-  cancelAnimationFrame(rafID)
-}
-function decreasingTransition(){
-
-  slider.scrollLeft += velocity;
-  velocity *= 0.95;
-  if(Math.abs(velocity) > 0.5){
-    rafID = requestAnimationFrame(decreasingTransition)
-    console.log(velocity);
-  }
-
-}
-
-slider.addEventListener('touchstart', e => {
-  holding = true;
-  // pageX => la largeur entre mon click et le DOCUMENT
-  firstClickX = e.targetTouches[0].pageX - slider.offsetLeft;
-
-  alreadyLeftScrolled = slider.scrollLeft;
-  stopTransition()
-})
-slider.addEventListener('touchend', () => {
-  holder = false;
-  startTransition()
-})
-slider.addEventListener('touchmove', e => {
-  if(!holding) return;
-
-  const x = e.targetTouches[0].pageX - slider.offsetLeft;
-
-  const scrolled = (x - firstClickX) * 2;
-
-  const prevScrollLeft = slider.scrollLeft;
-
-  slider.scrollLeft = alreadyLeftScrolled - scrolled;
-
-  velocity = slider.scrollLeft - prevScrollLeft;
-})*/
-
-
 fetch('./data.json')
     .then(response=>response.json())
     .then(data=>{
@@ -95,16 +7,21 @@ fetch('./data.json')
           console.log(card);
           if(card.isTrending == true){
             cardHtml += '<div class="slide" style="background-image:url('+card.thumbnail.trending.small+')">';
-            if (card.isBookmarked){
-              cardHtml += '<div style="color: red;">T</div>';
+            if(card.isBookmarked == true){
+
+              imgBookmarked = "/assets/icon-bookmark-full.svg";
+              cardHtml += '<div class="bookmark"><img src="'+imgBookmarked+'" alt="bookmark"></div>';
             }else{
-              cardHtml += '<div style="color: white;">T</div>';
+              imgBookmarked = "/assets/icon-bookmark-empty.svg";
+              cardHtml += '<div class="bookmark"><img src="'+imgBookmarked+'" alt="bookmark"></div>';
+  
             }
-            cardHtml += card.year +'<br>'+card.category +'<br>'+card.rating+'<br>'+card.title;
-            cardHtml += '<div class="overlay"></div>';
-            cardHtml += '</div>';
-           // 
-            scroll.innerHTML = cardHtml;
+            // &bull = bullet
+              cardHtml +='<div class="detail flex"><p class="date">'+card.year+'</p>'+'<p>&bull;</p>'+'<p class="'+card.category+'">'+card.category+'</p>'+'<p class="bullet">&bull;</p>'+'<p class="rating">'+card.rating+'</p>' +'</div>';
+              cardHtml+='<h2>'+card.title+'</h2>';
+              cardHtml += '<div class="overlay"></div>';
+              cardHtml += '</div>';
+              scroll.innerHTML = cardHtml;
           }
         }
     })
