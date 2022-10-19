@@ -12,13 +12,13 @@
     />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/AllCards.css">
+    <link rel="stylesheet" href="./assets/css/AllCards.css" />
+    <link rel="stylesheet" href="./assets/css/search.css" />
 
     <title>Frontend Mentor | Entertainment web app</title>
   </head>
   <body>
     <!-- NavBar Dalila -->
-
     <header class="header">
       <nav>
         <a href="/login.html" title="Ceci est un lien image HTML">
@@ -67,6 +67,20 @@
 
   <!-- End of NavBar Dalila-->
 
+  <!--Search for movies or TV series-->
+<form class="search-box">
+      
+  <input class="search-box" type="search" id="search-id" placeholder="Search for movies or TV series " onclick="this.value=''"  autocomplete="off">
+</form>
+
+<!--display nbr of results-->
+<p id="result"></p>
+
+<!--Show search results-->
+<div class="movie-cards flex">
+  
+</div>
+
   <main>
     <h2>Movies</h2>
   
@@ -76,5 +90,6 @@
 
   <script src="/assets/js/header.js"></script>
   <script src="/assets/js/movies.js"></script>
+  <script src="/assets/js/search.js"></script>
 </body>
 </html>

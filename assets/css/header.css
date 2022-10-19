@@ -42,14 +42,12 @@ a.active svg {
 /*=============== NAVBAR MOBILE FIRST===============*/
 
 nav {
-    background: #161d2f;
+    background: var(--dark-blue);
     border-radius: 0;
     height: 56px;
     left: 0;
     right: 0;
     top: 0;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
     width: 100%;
     align-items: center;
     display: flex;
@@ -83,7 +81,7 @@ nav svg:hover {
 }
 
 /*=============== TAB ===============*/
-@media (min-width:376px) and (max-width: 768px){
+@media (min-width:376px) and (max-width: 768px) {
     nav {
         flex-direction: row;
         height: 72px;

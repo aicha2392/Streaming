@@ -1,16 +1,24 @@
-fetch('data.json')
-    .then(response=>response.json())
-    .then(data=>{
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    let booked = JSON.parse(localStorage.getItem("bookmarked"));
 
-        for(let i of data){
-            
-            let imgBookmarked = "/assets/icon-bookmark-full.svg";;
+    for (let i of data) {
+      let imgBookmarked = "/assets/icon-bookmark-full.svg";
 
+      if (booked !== null) {
+        isBookedMarketLocal = booked.some(function (element) {
+          return element === i.title;
+        });
+      }
 
-            if(i.category == 'Movie' && i.isBookmarked == true){
-                let movieCards = document.querySelector("#movies-cards");
+      if (
+        (i.category == "Movie" && i.isBookmarked == true) ||
+        isBookedMarketLocal
+      ) {
+        let movieCards = document.querySelector("#movies-cards");
 
-                movieCards.innerHTML += `
+        movieCards.innerHTML += `
                 <div class="card">
                     <div class="card-icon">
                         <img src="${imgBookmarked}" alt="">
@@ -27,14 +35,12 @@ fetch('data.json')
                         <h4 id="titre-film">${i.title}</h4> 
                     </div>
                 </div> `;
+      }
 
-            }
-            
-            if(i.category == 'TV Series' && i.isBookmarked == true){
+      if (i.category == "TV Series" && i.isBookmarked == true) {
+        let serieCards = document.querySelector("#series-cards");
 
-                let serieCards = document.querySelector("#series-cards");
-
-                serieCards.innerHTML += `
+        serieCards.innerHTML += `
                 <div class="card">
                     <div class="card-icon">
                     <img src="${imgBookmarked}" alt="">
@@ -52,6 +58,6 @@ fetch('data.json')
                     <h4 id="titre-film">${i.title}</h4> 
                 </div>
                 </div> `;
-            }
-        }
-    })
+      }
+    }
+  });

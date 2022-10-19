@@ -8,18 +8,20 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="assets/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/AllCards.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/search.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/trending.css" />
+    <link rel="stylesheet" href="./assets/css/AllCards.css" />
 
     <title>Frontend Mentor | Entertainment web app</title>
   </head>
   <body>
     <!-- NavBar Dalila -->
-
-    <header class="header">
+     <!-- NavBar Dalila -->
+     <header class="header">
       <nav>
         <a href="/login.html" title="Ceci est un lien image HTML">
           <img class="logo" src="/assets/logo.svg" alt="logo" />
@@ -64,20 +66,56 @@
         <img class="img__profile" src="/assets/image-avatar.png" alt="avatar" />
       </nav>
     </header>
+      <!-- End of NavBar Dalila-->
 
-    <!-- End of NavBar Dalila-->
+    <main class="main">
+      <!-- Search Souad -->
+      <section class="searchBar">
+        <div id="search">
+          <!--Search for movies or TV series-->
+          <form class="search-box flex">
+            <input
+              class="search-box"
+              type="search"
+              id="search-id"
+              placeholder="Search for movies or TV series"
+              onclick="this.value=''"
+              autocomplete="off"
+            />
+          </form>
 
-    <!-- Display trending shows -->
+          <!--display nbr of results-->
+          <p id="result"></p>
 
+          <!--Show search results-->
+          <div class="movie-cards flex flex-justify-center"></div>
+        </div>
+      </section>
+      <!-- Trending Ange -->
+      <!-- Display trending shows -->
+      <section id="trending">
+        <div class="trending">
+          <h2>Trending</h2>
+        </div>
 
-<main>
-  <h2>Recommended for you</h2>
-  <div id="all-cards" class="all-cards flex">
-</main>
-  
-  <!-- La feuille de script JavaScript principale du projet -->
-  <script src="/assets/js/header.js"></script>
-  <script src="/assets/js/AllCards.js"></script>
-</body>
+        <div id="scroll">
+          <div class="slideshow-container">
+            <div id="slideshow" class="slideshow"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Display recommended shows -->
+      <section class="recommendedShows" id="recommended">
+        <h2>Recommended for you</h2>
+        <div id="all-cards" class="all-cards flex flex-justify-center"></div>
+      </section>
+    </main>
+
+    <!--JS script-->
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/AllCards.js"></script>
+    <script src="./assets/js/searchAll.js"></script>
+    <script src="./assets/js/ScrollTrending.js"></script>
+  </body>
 </html>
-
