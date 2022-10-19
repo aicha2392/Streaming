@@ -31,10 +31,155 @@
 }
 
 body{
-    position: relative;
+    background-color: var(--black);
     
-    /* height: 667px; */
-    background: var(--black);
 }
 
 
+
+.recommendedShows h2{
+    color: var(--white);
+    font-weight:200;
+    font-size:18px;
+    padding:0 0px 0 10px;
+    margin-bottom: 20px; 
+    margin: 5px;  
+}
+
+#recommended{
+    margin: 5px;
+}
+
+.all-cards{
+  gap: 20px;
+  /* padding: 10px; */
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.card{
+    position: relative;
+    width: 160px;
+    height: 170px;  
+}
+
+.card-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 5px;
+    background: #8f8a8a65;
+    border-radius: 100%;
+  }
+
+.card-icon img{
+    height: 10px;
+    width: 10px;
+    margin:0 5px 0 5px;
+  }
+
+.card .cover {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card .details {
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+}
+
+.card p{
+    color:var(--white);
+    font-weight: 100;
+    font-size:12px;
+    margin: 3px;
+}
+
+#titre-film{
+    color:var(--white);
+    font-weight: 300;
+    font-size:14px;
+}
+
+.card .Movie::before {
+    content: url("/assets/icon-category-movie.svg");
+    margin-right: 5px;
+}
+
+.card .Series::before {
+    content: url("/assets/icon-category-tv.svg");
+    margin-right: 5px;
+}
+
+
+/***********MEDIA QUIERES**********MEDIA QUIERES************** MEDIA QUIERES ****************MEDIA QUIERES**************************/
+
+
+/**************************************** PARTIE TABLETTE ********************************************************/
+
+@media (min-width:376px) and (max-width: 768px){ 
+    .main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    } 
+    
+    /* .card{
+        position: relative;
+        width: 230px;
+        height: 170px; 
+        margin-bottom: 30px; 
+        padding-left: 10px;
+    }
+
+    .all-cards{
+        gap: 20px;
+        flex-wrap: wrap;
+        padding:10px;
+      }
+
+    h2{
+        color: var(--white);
+        font-weight:200;
+        font-size:25px;
+        padding:0 0 0 10px;
+        margin-bottom: 30px;  
+    } */
+ }
+
+/* *************************************** PARTIE DESKTOP ********************************************************/
+ 
+@media (min-width:769px) and (max-width:1440px){
+    /* .card{
+        position: relative;
+        width: 270px;
+        height: 170px; 
+        margin-bottom: 40px; 
+        padding-left: 10px;
+    }
+
+    .all-cards{
+        gap: 20px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: flex-end;
+        margin: 40px;
+      }
+    
+    h2{
+        color: var(--white);
+        font-weight:200;
+        font-size:30px;
+        padding:0 0px 0 10px;
+        margin-bottom: 30px; 
+        margin-left: 240px; 
+    }
+
+    #titre-film{
+        color:var(--white);
+        font-weight: 300;
+        font-size: 20px;
+    } */
+
+    }

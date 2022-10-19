@@ -1,0 +1,189 @@
+@import "style.css";
+
+  /* Mobile */
+  #trending{
+    width: 375px;
+    margin: 5px;
+    padding-top: 25px;
+    padding-bottom: 23px;
+    /*position: absolute;
+    width: 496px;
+    height: 181px;
+    left: 16px;
+    top: 128px;*/
+}
+
+.trending h2{
+    color: var(--white);
+    font-weight:200;
+    font-size:18px;
+    padding:0 0px 0 18px;
+    margin-bottom: 16px; 
+}
+
+#scroll{ 
+
+    /*position: absolute;*/
+    width: 375px;
+    height: 140px;
+    /*left: 0px;
+    top: 41px;*/  
+}
+/* h3 {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+  color: #FFFFFF;
+  margin-top: 22px;
+} */
+
+.main-content {
+    padding: 3vw 5vw 5vw;
+  }
+  h1 {
+    font-family: Playfair Display, serif;
+    font-size: clamp(25px, 7vw, 70px);
+    font-weight: 200;
+  }
+  h1 + span {
+    font-size: clamp(14px, 2vw, 20px);
+  }
+  .slideshow-container {
+    margin-top: 4vw;
+    overflow: scroll;
+    min-height: 140px;
+    cursor: grab;
+    position: relative;
+    left:20px;
+  }
+  .slideshow-container:active {
+    cursor: grabbing;
+  }
+  .slideshow {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    pointer-events: none;
+  }
+  .slide {
+    flex-shrink: 0;
+    width: 240px;
+    height: 140px;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+  }
+  .slide:not(:nth-child(1)){
+    margin-left: 10px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+  }
+  .slide h2, .slide a {
+    text-shadow: 0 0 5px rgba(0,0,0,0.39);
+  }
+  .slide h2 {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    bottom: 10px;
+    padding-left: 14px;
+  }
+  .slide a {
+    position: absolute;
+    bottom: clamp(10px, 2vw, 20px);
+    right: clamp(10px, 2vw, 20px);
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 300;
+    color: #fff;
+    pointer-events: auto;
+  }
+  
+.slide .bookmark{
+
+    top: 5px;
+    right: 10px;
+    /*padding: 5px;*/
+    border-radius: 100%;
+    position: absolute;
+    background: #10141E;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.bookmark img{
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+
+}    
+
+ .slide .detail {
+  display: flex;
+  justify-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 29px;
+  padding-left: 15px;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.slideshow .Movie::before {
+  content: url("/assets/icon-category-movie.svg");
+  margin-right: 5px;
+}
+
+.slideshow .Series::before {
+  content: url("/assets/icon-category-tv.svg");
+  margin-right: 5px;
+}
+
+.slide .bullet{
+  display: none;
+}
+
+.slide .rating{
+
+  background-color: #1010103d;
+  border-radius: 40%;
+  padding: 1px 8px 1px 8px;
+  margin-left: 65px;
+  position: absolute;
+  top: 15px;
+  left: 135px;
+
+}
+
+
+/* Tablette */
+
+@media (min-width:376px) and (max-width: 768px) {
+
+  .slide .bullet{
+    display: block;
+  }
+
+}
+
+
+/* Desktop */
+
+@media (min-width:769px) and (max-width:1440px){
+
+
+
+
+
+}
