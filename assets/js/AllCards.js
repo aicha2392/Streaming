@@ -11,7 +11,7 @@ fetch('data.json')
             
             let allCards = document.querySelector("#all-cards");
             let imgBookmarked = "";
-            console.log(i.title + " : " + localStorage.getItem(i.title) + " | ");
+            //console.log(i.title + " : " + localStorage.getItem(i.title) + " | ");
             if(localStorage.getItem(i.title) == "true"){
               imgBookmarked = "/assets/icon-bookmark-full.svg";
             }else{
@@ -46,12 +46,12 @@ function addFavorites(e,titreFilm) {
   
     if(imgsrc.includes("icon-bookmark-empty.svg")){
        // si notre source d'image (src)contient "icon-bookmark-empty.svg" càd icone vide
-      e.querySelector(".iconImage").src="../assets/icon-bookmark-full.svg"; //on remplace l'icone vide par une icone rempli "full"
+      e.querySelector(".iconImage").src="./assets/icon-bookmark-full.svg"; //on remplace l'icone vide par une icone rempli "full"
       localStorage.setItem(titreFilm,"true");//le isbookmarked dans le local storage reprend la valeur true //à la base c'etait false vu que l'icone etait vide
 
     }else{
       // l'icone devient "empty" et le isbookmarked dans localstorage devient false
-      e.querySelector(".iconImage").src="../assets/icon-bookmark-empty.svg";
+      e.querySelector(".iconImage").src="./assets/icon-bookmark-empty.svg";
       localStorage.setItem(titreFilm,"false");
 
     }

@@ -1,3 +1,8 @@
+@import "search.css";
+@import "movie-tv.css";
+@import "header.css";
+@import "trending.css";
+
 /* CSS reset */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
@@ -36,8 +41,15 @@ body{
 }
 
 
-
-.recommendedShows h2{
+section>h2{
+    color: var(--white);
+    font-weight:200;
+    font-size:18px;
+    padding:0 0px 0 10px;
+    margin-bottom: 20px; 
+    margin: 5px;  
+}
+#recommended h2{
     color: var(--white);
     font-weight:200;
     font-size:18px;

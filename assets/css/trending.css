@@ -1,6 +1,4 @@
-@import "style.css";
-
-  /* Mobile */
+/* Mobile */
   #trending{
     width: 375px;
     margin: 5px;
@@ -109,7 +107,7 @@
     pointer-events: auto;
   }
   
-.slide .bookmark{
+.bookmark{
 
     top: 5px;
     right: 10px;

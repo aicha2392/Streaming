@@ -1,7 +1,6 @@
 let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
-let content = document.querySelector('#recommended');
-let trending = document.querySelector('#trending');
+let content = document.querySelector(".allMovies");
 searchResult.style.visibility='hidden';
 
     fetch('./data.json')
@@ -9,36 +8,31 @@ searchResult.style.visibility='hidden';
         .then(json =>{
 
             // iterating movies
-            for (let i of json){
-                if(localStorage.getItem(i.title) == null){
-                    localStorage.setItem(i.title, i.isBookmarked)
-                  }
-                  let imgBookmarked = "";
-                  // if(value.isBookmarked == true){
-                    //     imgBookmarked = "../assets/icon-bookmark-full.svg";
-                    // }else{
-                    //         imgBookmarked = "../assets/icon-bookmark-empty.svg";
-                    // }
-                if(localStorage.getItem(i.title) == "true"){
-                    imgBookmarked = "/assets/icon-bookmark-full.svg";
-                }else{
-                    imgBookmarked = "/assets/icon-bookmark-empty.svg";
-                    }
-        
-                addElement(searchResult, i, imgBookmarked);
+            for (let value of json){
+                if(localStorage.getItem(value.title) == null){
+                    localStorage.setItem(value.title, i.isBookmarked)
+                }
+                
+                if(value.category == 'Movie'){
+                    let imgBookmarked = "";
+                    
+                    if(localStorage.getItem(value.title) == "true"){
+                        imgBookmarked = "/assets/icon-bookmark-full.svg";
+                    }else{
+                        imgBookmarked = "/assets/icon-bookmark-empty.svg";
+                        }
+         
+                    addElement(searchResult, value, imgBookmarked);
             }
-            
+        } 
         })
     )
-    
 
-// add event listener
+
+// add event listener for search 
 searchInput.addEventListener('keyup', searchmovies);
 
-
-
-
-// search movie
+// Search Movie 
 function searchmovies(){
     let searchValue = searchInput.value.toUpperCase();
     
@@ -47,7 +41,6 @@ function searchmovies(){
         let item = searchResult.querySelectorAll('.card');
         let b =0;
         content.style.visibility='hidden';
-        trending.style.visibility='hidden';
         searchResult.style.visibility='visible';
         for (let i = 0; i < item.length; i++){
             let span = item[i].querySelector('#titre-film');
@@ -74,34 +67,37 @@ function searchmovies(){
     }
     }
  
+
 // get value from the data json and create dynamic element
 function addElement(element, value, imgBookmarked){
 
-    let div = document.createElement('div');
-    div.className = "card";
-
-    let {thumbnail, year, title, category, rating } = value;
-
-    div.innerHTML = `
-                <div class="card-icon" onclick="addFavorites(this,'${title}')">
-                     <img class="iconImage" src="${imgBookmarked}" alt="">
-                     </div>
-
-                     <img class="cover" src="${thumbnail.regular.small}" alt="">
-                     <div class="infos">
-                     <div class="detail flex">
-                         <p class="years">${year}</p>
-                         <p>•</p>
-                         <p class="${category}">${category}</p>
-                         <p>•</p>
-                         <p class="pegi">${rating}</p>
-                     </div>
-                     <h4 id="titre-film">${title}</h4> 
-                     </div>
-    `;
     
-    element.appendChild(div);
+        let div = document.createElement('div');
+        div.className = "card";
+
+        let {thumbnail, year, title, category, rating } = value;
+
+        div.innerHTML = `
+                        <div class="card-icon" onclick="addFavorites(this,'${title}')">
+                            <img class="iconImage" src="${imgBookmarked}" alt="">
+                        </div>
+
+                        <img class="cover" src="${thumbnail.regular.small}" alt="">
+                        <div class="infos">
+                        <div class="detail flex">
+                            <p class="years">${year}</p>
+                            <p>•</p>
+                            <p class="${category}">${category}</p>
+                            <p>•</p>
+                            <p class="pegi">${rating}</p>
+                        </div>
+                        <h4 id="titre-film">${title}</h4> 
+                        </div>
+        `;
+        
+        element.appendChild(div);
 }
+
 
 
 function addFavorites(e,titreFilm) {
@@ -128,4 +124,3 @@ function addFavorites(e,titreFilm) {
 window.onload = function(){
     document.getElementById("search-id").value = "";
    }
-
