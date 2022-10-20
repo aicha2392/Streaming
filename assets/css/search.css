@@ -14,8 +14,8 @@
 }
 
 form.search-box.flex {
-/*   position: relative; */
-/*   width: 280px; */
+  /*   position: relative; */
+  /*   width: 280px; */
   height: 24px;
   top: 8px;
   right: 8px
@@ -150,21 +150,23 @@ input.search-box:focus {
 /* *************************************** PARTIE TABLETTE ********************************************************/
 
 @media (min-width:376px) and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
 
-  /* #search{
+  #search {
     display: flex;
-    top: 100px;
     flex-wrap: wrap;
     flex-direction: column;
-}
-  
+  }
+
   form.search-box.flex {
-    
+
     top: 8px;
     left: 12px;
-   }
-  
-   #result {
+  }
+
+  #result {
     color: var(--white);
     position: absolute;
     width: auto;
@@ -178,36 +180,48 @@ input.search-box:focus {
     line-height: 25px;
     letter-spacing: -0.3125px;
   }
-  
-  .movie-cards{
+
+  .movie-cards {
     position: relative;
     gap: 20px;
     flex-wrap: wrap;
-    padding:10px;
+    padding: 10px;
   }
-  .result-card{
-      position: absolute;
-      width: 230px;
-      height: 170px; 
-      margin-bottom: 50px; 
-      padding-left: 10px;
+
+  .result-card {
+    position: absolute;
+    width: 230px;
+    height: 170px;
+    margin-bottom: 50px;
+    padding-left: 10px;
   }
-  
-  h2{
-      color: var(--white);
-      font-weight:200;
-      font-size:25px;
-      padding:0 0 0 10px;
-      margin-bottom: 30px;  
+
+  input.search-box {
+    border: none;
+    width: 80%;
+    /* margin: 8px 11px 20px 20px; */
+    border-bottom: 2px solid transparent;
+    color: var(--white);
+    background: transparent url(../icon-search.svg) no-repeat;
+    background-size: 24px 24px;
+    background-position: left;
+    /* height: 20px; */
+    /* right: 1.17%; */
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    padding: 28px;
+/*     left: -67px;
+ */    /* top: 0px; */
+    position: relative;
+
   }
-*/
-}
 
-/* *************************************** PARTIE DESKTOP ********************************************************/
+  /* *************************************** PARTIE DESKTOP ********************************************************/
 
-@media (min-width:769px) {
+  @media (min-width:769px) {
 
-  /* form.search-box {
+    /* form.search-box {
     position: relative;
     width: 280px;
     height: 24px;
@@ -254,4 +268,4 @@ input.search-box:focus {
   }
    */
 
-}
+  }

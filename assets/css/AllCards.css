@@ -12,6 +12,8 @@
 /* Flex settings */
 .flex {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .flex-column {
@@ -73,6 +75,7 @@ h2 {
 
 
 .all-cards {
+    display: flex;
     gap: 20px;
     padding: 10px;
     flex-wrap: wrap;
@@ -140,6 +143,10 @@ h2 {
 /**************************************** PARTIE TABLETTE ********************************************************/
 
 @media (min-width:376px) and (max-width: 768px) {
+
+    body {
+    padding: 10px;
+    }
     .card {
         position: relative;
         width: 230px;
@@ -149,17 +156,31 @@ h2 {
     }
 
     .all-cards {
-        gap: 20px;
-        flex-wrap: wrap;
-        padding: 10px;
+/*      gap: 5px;*/     
+        grid-template-columns: auto auto auto;
+        padding: 0;
     }
 
     h2 {
         color: var(--white);
-        font-weight: 200;
-        font-size: 25px;
-        padding: 0 0 0 10px;
+        font-weight: 400;
+        font-size: 32px;
+        padding: 0 0 0 19px;
         margin-bottom: 30px;
+    }
+
+
+    #titre-film {
+        font-size: 18px;
+    }
+
+    .flex {
+        justify-content: space-between;
+    }
+
+    .card p {
+        font-weight: 200;
+        font-size: 13px;
     }
 }
 
@@ -171,15 +192,6 @@ h2 {
         width: 270px;
         height: 170px;
         margin-bottom: 40px;
-        padding-left: 10px;
-    }
-
-    .all-cards {
-        gap: 20px;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: flex-end;
-        margin: 40px;
     }
 
     h2 {
@@ -196,5 +208,6 @@ h2 {
         font-weight: 300;
         font-size: 20px;
     }
+
 
 }

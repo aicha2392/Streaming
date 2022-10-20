@@ -12,8 +12,10 @@
 /* Flex settings */
 .flex {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+}
+
+.grid {
+    display: grid;
 }
 
 .flex-column {

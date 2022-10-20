@@ -1,7 +1,7 @@
 let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
 let content = document.getElementById("recommended");
-searchResult.style.visibility = "hidden";
+searchResult.style.display = "none";
 
 fetch("./data.json").then((res) =>
   res.json().then((json) => {
@@ -40,12 +40,12 @@ function searchmovies() {
   } else {
     location.reload();
     document.getElementById("search-id").value = "";
-    result.style.visibility = "hidden";
+    result.style.display = "hidden";
   }
   document.getElementById("search-id").onclick = function () {
     location.reload();
     document.getElementById("search-id").value = "";
-    result.style.visibility = "hidden";
+    result.style.display = "hidden";
   };
 }
 

@@ -2,7 +2,7 @@ let searchResult = document.querySelector(".movie-cards");
 let searchInput = document.getElementById("search-id");
 let content = document.getElementById("recommended");
 let trending = document.getElementById("trending");
-searchResult.style.visibility = "hidden";
+searchResult.style.display = "none";
 
 fetch("./data.json").then((res) =>
   res.json().then((json) => {
