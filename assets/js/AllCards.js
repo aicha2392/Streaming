@@ -42,7 +42,7 @@ fetch('data.json')
 function addFavorites(e,titreFilm) {
   //cette fonction on l'appelle lorsqu'on clique sur l'icone et la zone autour 
   //fonction appelée dans la div class = "card-icon"
-  let imgsrc = e.querySelector(".iconImage").src; //on récupère la source de l'image de l'élément sélectionné (e), qui est notre card
+  let imgsrc = e.querySelector(".iconImage").src; //on récupère la source de l'icone de l'élément sélectionné (e), qui est notre card-icon
   
     if(imgsrc.includes("icon-bookmark-empty.svg")){
        // si notre source d'image (src)contient "icon-bookmark-empty.svg" càd icone vide

@@ -1,5 +1,4 @@
 @import "search.css";
-@import "movie-tv.css";
 @import "header.css";
 @import "trending.css";
 
@@ -33,6 +32,13 @@
     --light-blue: hsl(223, 23%, 46%);
     --dark-blue: hsl(223, 36%, 14%);
     --white: hsl(0, 0%, 100%);
+
+    /* Font*/
+    --font-heading: 1.6rem;
+    --font-weight: 400;
+    --font-primary: "Outfit", sans-serif;
+
+    --size-24: 2.4rem;
 }
 
 body{
@@ -130,19 +136,15 @@ section>h2{
 
 /**************************************** PARTIE TABLETTE ********************************************************/
 
-@media (min-width:376px) and (max-width: 768px){ 
-    .main{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    } 
-    
-    /* .card{
+@media (min-width:376px){ 
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .card{
         position: relative;
-        width: 230px;
-        height: 170px; 
-        margin-bottom: 30px; 
-        padding-left: 10px;
+        
     }
 
     .all-cards{
@@ -150,19 +152,12 @@ section>h2{
         flex-wrap: wrap;
         padding:10px;
       }
-
-    h2{
-        color: var(--white);
-        font-weight:200;
-        font-size:25px;
-        padding:0 0 0 10px;
-        margin-bottom: 30px;  
-    } */
+    
  }
 
 /* *************************************** PARTIE DESKTOP ********************************************************/
  
-@media (min-width:769px) and (max-width:1440px){
+@media (min-width:769px){
     /* .card{
         position: relative;
         width: 270px;
