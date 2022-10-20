@@ -158,9 +158,7 @@ body {
 .slide .bullet{
     display: block;
   }
-.trending h2 {
-    font-size: 32px;
-}
+
 }
 
 
@@ -172,9 +170,6 @@ body {
 }
 
 
-.trending h2 {
-    font-size: 32px;
-}
 
 /*** slide show ***/
 #scroll {
