@@ -216,14 +216,19 @@ input.search-box:focus {
     position: relative;
 
   }
+}
 
   /* *************************************** PARTIE DESKTOP ********************************************************/
 
   @media (min-width:769px) {
 
-    /* form.search-box {
+    body {
+        flex-direction: row;
+    }
+
+form.search-box {
     position: relative;
-    width: 280px;
+    width: 100%;
     height: 24px;
     top: 64px;
     left: 25px;

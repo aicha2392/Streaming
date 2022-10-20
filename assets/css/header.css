@@ -113,7 +113,8 @@ nav svg:hover {
 }
 
 /*=============== DESKTOP ===============*/
-@media only screen and (min-width: 769px) {
+@media (min-width:769px) {
+
     body {
         flex-direction: row;
     }
@@ -124,7 +125,7 @@ nav svg:hover {
         display: flex;
         flex-direction: column;
         height: 960px;
-        left: 70px;
+        left: 30px;
         position: absolute;
         top: 32px;
         width: 96px;

@@ -7,6 +7,10 @@
 /* *************************************** PARTIE TABLETTE ********************************************************/
 
 @media (min-width:376px) and (max-width: 768px){ 
+    body {
+        flex-direction: column;
+    }
+
     .card{
         position: relative;
         width: 230px;
@@ -32,7 +36,12 @@
 
 /* *************************************** PARTIE DESKTOP ********************************************************/
  
-@media (min-width:769px) and (max-width:1440px){
+@media (min-width:769px) {
+
+    body {
+        flex-direction: row;
+    }
+    
     .card{
         position: relative;
         width: 270px;

@@ -145,7 +145,8 @@ h2 {
 @media (min-width:376px) and (max-width: 768px) {
 
     body {
-    padding: 10px;
+        flex-direction: column;
+        padding: 10px;
     }
     .card {
         position: relative;
@@ -186,7 +187,12 @@ h2 {
 
 /* *************************************** PARTIE DESKTOP ********************************************************/
 
-@media (min-width:769px) and (max-width:1440px) {
+@media (min-width:769px) {
+
+    body {
+        flex-direction: row;
+    }
+
     .card {
         position: relative;
         width: 270px;
@@ -195,12 +201,7 @@ h2 {
     }
 
     h2 {
-        color: var(--white);
-        font-weight: 200;
-        font-size: 30px;
-        padding: 0 0px 0 10px;
-        margin-bottom: 30px;
-        margin-left: 240px;
+        margin-left: 141px;
     }
 
     #titre-film {
