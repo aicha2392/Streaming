@@ -146,23 +146,42 @@ section>h2{
         padding: 10px;
     }
 
-    .card{
+    .card {
         position: relative;
+        width: 30%;
+        height: 200px;
         
+    }
+
+    .card p {
+        font-weight: 300;
+        font-size: 13px;
     }
 
     .all-cards{
     /* gap: 20px; */
     /* flex-wrap: wrap; */
         padding: 10px 0;
+        margin: 0;
       }
 
     #recommended h2 {
         font-size: 32px;
+        padding: 0px 0px 0 15px;
       }
+
+    #recommended {
+        margin: 0px;
+      }
+    
 
       section>h2 {
         font-size: 32px;
+      }
+
+      #titre-film {
+        font-weight: 500;
+        font-size: 18px;
       }
     
  }
@@ -172,7 +191,7 @@ section>h2{
 @media (min-width:769px){
 
     #recommended h2 {
-        padding: 0 0px 0 145px;
+        padding: 0 0px 0 152px;
     }
    .card{
         position: relative;
@@ -182,12 +201,9 @@ section>h2{
         padding-left: 10px;
     }
     .all-cards{
-        /* gap: 20px; */
-        /* flex-wrap: wrap; */
-        /* display: flex; */
-        /* margin: 40px; */
-        justify-content: center;
-        margin-left: 110px;
+        gap: 33px;
+        justify-content: flex-start;
+        margin-left: 142px;
       }
     
     h2{
@@ -195,14 +211,13 @@ section>h2{
         margin-bottom: 30px; 
     }
     #titre-film{
-        color:var(--white);
-        font-weight: 300;
-        font-size: 20px;
+        font-weight: 500;
+        font-size: 18px;
     } 
 
     section>h2 {
-        padding: 0 0px 0 146px;
-        margin-top: 20px;
+        padding: 0 0px 0 152px;
+        margin-top: 55px;
     }
 
     }
