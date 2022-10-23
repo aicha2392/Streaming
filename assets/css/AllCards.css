@@ -156,8 +156,7 @@ h2 {
         padding-left: 10px;
     }
 
-    .all-cards {
-/*      gap: 5px;*/     
+    .all-cards {   
         grid-template-columns: auto auto auto;
         padding: 0;
     }
@@ -209,6 +208,4 @@ h2 {
         font-weight: 300;
         font-size: 20px;
     }
-
-
 }

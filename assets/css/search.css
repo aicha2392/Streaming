@@ -1,11 +1,10 @@
 @import "style.css";
-/*
+
+/*--------------------------------------------------------------------
     ============
     |search bar|
     ============
-*/
-
-
+----------------------------------------------------------------------*/
 
 #search {
   position: relative;
@@ -20,7 +19,6 @@ form.search-box.flex {
   right: 8px;
   padding-bottom: 64px;
 }
-
 
 input.search-box {
   border: none;
@@ -47,14 +45,11 @@ input.search-box:focus {
   outline: 0px;
 }
 
-
-
-/*
+/*---------------------------------------------------------------------
      ============
     |show results|
      ============
-*/
-
+-----------------------------------------------------------------------*/
 
 #result {
   color: var(--white);
@@ -80,9 +75,7 @@ input.search-box:focus {
   left: 6px
 }
 
-
 .result-card {
-  /* position: relative; */
   width: 160px;
   height: 170px;
   margin-bottom: 0px;
@@ -139,9 +132,6 @@ input.search-box:focus {
 }
 
 
-
-
-
 /***********MEDIA QUIERES**********MEDIA QUIERES************** MEDIA QUIERES ****************MEDIA QUIERES**************************/
 
 
@@ -166,7 +156,6 @@ input.search-box:focus {
   input.search-box {
     left: 15px;
   }
-
 }
 
 /* *************************************** PARTIE DESKTOP ********************************************************/
@@ -186,18 +175,17 @@ input.search-box:focus {
   }
 
   #search {
-     /* position: absolute; */
-     width: auto;
-     display: flex;
-     left: 104px;
+    /* position: absolute; */
+    width: auto;
+    display: flex;
+    left: 104px;
   }
 
   form.search-box.flex {
     position: relative;
-      top: 25px;
-      left: 30px;
+    top: 25px;
+    left: 30px;
   }
-
 
   .movie-cards {
     gap: 20px;
@@ -209,10 +197,10 @@ input.search-box:focus {
 
   input.search-box {
     font-size: 24px;
-}
+  }
 
-#result {
-  left: 49px;
-  top: 70px;
- }
+  #result {
+    left: 49px;
+    top: 70px;
+  }
 }
